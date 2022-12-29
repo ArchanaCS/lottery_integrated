@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&family=EB+Garamond&display=swap");
+
+.Unitlist_component1 {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 2px;
+  border: 0.2px solid #f3f3f4;
+  box-shadow: 1px 1px #f3f3f4;
+  padding: 10px;
+}
+
+.Unitlist_row1 {
+  /* height: 5vh; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+  overflow-wrap: break-word;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.Unitlist_row2 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+.Unitlist_row2:hover {
+  transform: translateY(3px);
+  color: black;
+  font-weight: 600;
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 2px;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.Unitlist_row1 label,
+.Unitlist_row2 label {
+  color: gray;
+  font-family: "Comic Neue", cursive;
+}
+.Unitlist_row1_col1,
+.Unitlist_row2_col1 {
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
+  overflow-wrap: break-word;
+}
+.Unitlist_row1_col2,
+.Unitlist_row2_col2 {
+  width: 20%;
+  /* background-color: red; */
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  overflow-wrap: break-word;
+  /* border-bottom: 1px solid rgba(128, 128, 128, 0.364); */
+}
+.Unitlist_row1_col3,
+.Unitlist_row2_col3 {
+  width: 20%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  overflow-wrap: break-word;
+}
+.Unitlist_row1_col4,
+.Unitlist_row2_col4 {
+  width: 35%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow-wrap: break-word;
+}
+.Unitlist_row1_col5,
+.Unitlist_row2_col5 {
+  width: 15%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  overflow-wrap: break-word;
+}
+.Unitlist_row1_col6,
+.Unitlist_row2_col6 {
+  width: 5%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  overflow-wrap: break-word;
+}
+
+.Unitlist_row2_col4 button {
+  min-width: 25px;
+  margin-left: 1px;
+  padding: 5px;
+  color: white;
+  font-family: "Comic Neue", cursive;
+  background-color: blue;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  border: none;
+  border-radius: 5px;
+}
+
+.Unitlist_row2_col6 button {
+  background-color: transparent;
+  border: none;
+  font-family: "Comic Neue", cursive;
+  color: gray;
+  font-weight: 600;
+}

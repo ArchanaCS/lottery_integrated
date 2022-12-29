@@ -1,0 +1,36 @@
+.Editheader{
+    width: 50%;
+    display: flex;
+    padding: 5px;
+}
+.Editheader_raw{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.Editheader_raw_btn{
+    width: 30%;
+}
+button {
+    padding: 15px;
+    width: 100%;
+    font-weight: 600;
+    font-size: large;
+    background-color:  rgba(165, 165, 165, 0.815);
+    color: #fff;
+    border: none;
+    
+}
+button:hover{
+    background-color: rgb(196, 86, 86);
+    
+}
+.clicked{
+    background-color: rgb(196, 86, 86);
+    padding: 15px;
+    width: 100%;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+
+}

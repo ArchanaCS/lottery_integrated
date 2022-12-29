@@ -1,0 +1,20 @@
+.Filterpage_head button{
+    background-color: #202232;
+    color: aliceblue;
+}
+table{
+    width: 100%;
+    /* border-collapse: collapse; */
+}
+td{
+    /* border: 1px solid black; */
+    text-align: left;
+    padding: 10px;
+    font-weight: 500;
+    
+}
+th{
+    background-color:#202232;
+    color: goldenrod;
+    padding: 10px;
+}

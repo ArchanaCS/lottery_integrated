@@ -1,0 +1,35 @@
+.menu_outer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  /* padding: 10px; */
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.menu_col {
+  width: 20%;
+  display: flex;
+  /* background-color: red; */
+  overflow-wrap: break-word;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu_col label {
+  width: 100%;
+  text-align: center;
+  color: grey;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.menu_col label:hover {
+  color: black;
+  /* text-underline-offset: .5rem; */
+  transform: scale(1.1);
+}

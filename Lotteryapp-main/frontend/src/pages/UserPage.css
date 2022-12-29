@@ -1,0 +1,44 @@
+
+.userpage_headerUser{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+}
+.userpage_outer
+{
+   width: 100%;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ /* align-items: center; */
+}
+.userpage_lottunits, .userpage_option,.userpage_list{
+   width: 60%;
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+   flex-direction: column;
+   /* background-color: red; */
+ }
+ .userpage_col_tab{
+   background-color: rgb(255, 255, 255);
+   margin: 10px 0px;
+   padding: 10px;
+   background-color: black;
+   border-radius: 10px;
+   width:53%;
+   margin-left:20px
+}
+.userpage_col_tab_icon{
+   display: flex;
+   align-items: center;
+   margin: 7px 0px;
+}
+.userpage_col1{
+   width:100%;
+   margin-left: 20px;
+}
+.userpage_col_tab_icon label{
+   margin-left: 10px;
+   color: goldenrod;
+}

@@ -1,0 +1,46 @@
+.topbar_outer {
+    background-color: rgb(231 231 231 / 80%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    
+}
+
+.topbar_inner {
+    background-color: #ffffff;
+    min-width: 15%;
+   
+    display: flex;
+    flex-direction:column;
+    border: 1px solid rgba(223, 223, 223, 0.918)
+}
+.topbar_inner_row1{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.topbar_outer_row2{
+    display: flex;
+    justify-content: center;
+
+}
+.topbar_outer_row2 button{
+    background-color: rgb(13, 177, 232);
+    border: none;
+    color: white;
+    width:40px;
+    margin-bottom: 20px;
+}
+.topbar_inner_row1_img 
+{
+ 
+}
+.topbar_inner_row1_text{
+ 
+    padding-left: 10px;
+}

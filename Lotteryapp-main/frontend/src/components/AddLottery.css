@@ -1,0 +1,86 @@
+.AddLottery{
+    width: 100%;
+}
+.AddLottery_row{
+    margin: 20px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0 0 5px rgba(122, 122, 189, 0.662);
+    padding: 10px;width: 80%;
+}
+.AddLottery_row_icon{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.AddLottery_row_icon label{
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.AddLottery_head{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+.AddLottery_head_row1{
+    display: flex;
+    flex-direction: column;
+}
+.AddLottery_head_row1 button{
+    padding: 10px;
+    background-color: rgba(3, 99, 3, 0.647);
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+    width: 100px;
+}
+
+.AddLottery_head_row2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.AddLottery_head_row2 img{
+    width: 130px;
+   
+}
+.AddLottery_head_row2 label{
+    font-size: medium;
+    font-weight: 400;
+    color: rgb(220, 20, 20);
+}
+.AddLottery_body{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black */
+}
+.AddLottery_body_row1{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.AddLottery_body_row2{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.AddLottery_body_row1_col{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.AddLottery_body_row1_col input,.AddLottery_body_row2 input{
+    border-radius: 5px;
+    border-color: rgba(30, 143, 255, 0.637);
+    padding: 7px;
+}
+.AddLottery_body_row1_col label,.AddLottery_body_row2 label{
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: large;
+}

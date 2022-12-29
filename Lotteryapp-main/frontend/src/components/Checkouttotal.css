@@ -1,0 +1,40 @@
+.Checkouttotal_component2 {
+  width: 100%;
+  /* height: 25vh; */
+  border-bottom: 1px solid rgba(128, 128, 128, 0.493);
+}
+
+.Checkouttotal_component2_row {
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+
+.Checkouttotal_component2_row_col {
+  width: 50%;
+  font-family: "Comic Neue", cursive;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  display: flex;
+  flex-direction: column;
+}
+.Checkouttotal_left {
+  justify-content: left;
+}
+.Checkouttotal_right {
+  justify-content: right;
+  
+}
+
+.Checkouttotal_component2_row_col label {
+  color: rgb(143, 142, 142);
+  text-align: right;
+}
+
+.Checkouttotal_component2_row_col span {
+  color: mediumblue;
+}
+.Checkouttotal_component2_row_col span:hover {
+  color: rgb(7, 7, 106);
+  font-weight: 600;
+}

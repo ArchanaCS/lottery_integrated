@@ -1,0 +1,46 @@
+.Filterui{
+    width: 100%;
+    height:70vh;
+    background-color: rgba(255,255,255,.8);
+    position: absolute;
+}
+.Filterbox{
+   width: 320px;
+   margin-left: 20%;
+   margin-top: 9%;
+   padding: 10px;
+   background-color: #020223;
+   color: #fff;
+   position: relative;
+}
+.Filterbox_row0{
+    font-weight: 700;
+}
+.Filterbox_row1,.Filterbox_row3{
+    border-top: 0.5px solid white;
+    border-bottom: 0.5px solid white;  
+}
+.Filterbox_row1,.Filterbox_row3,.Filterbox_row2,.Filterbox_row4{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  font-weight: 400;
+}
+.Filterbox_row5{
+    padding: 10px;
+    display: flex;
+    justify-content: right;
+}
+.Filterbox_row5 button{
+    background-color:#fff;
+    color: #020223;
+    padding: 5px;
+    border-radius: 10px;
+    border-style: none;
+}
+.Model3_clm{
+    display: flex;
+    flex-direction: row;
+}

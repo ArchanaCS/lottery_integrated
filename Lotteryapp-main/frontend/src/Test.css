@@ -1,0 +1,17 @@
+.red{
+    background-color: red;
+    border: 1px solid gray;
+    padding: 10px;
+    color: white;
+    margin-left: 10px;
+}
+.black{
+    background-color: black;
+    color: white;
+    border: 1px solid gray;
+    padding: 10px;
+    margin-left: 10px;
+}
+.maindiv{
+    display: flex; 
+}

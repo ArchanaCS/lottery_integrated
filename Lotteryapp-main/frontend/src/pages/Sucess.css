@@ -1,0 +1,11 @@
+.sucess_outer {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgba(247, 240, 240/10%);
+    min-height: 100vh;
+    min-width: 100%;
+    position: absolute;
+    z-index: 1;
+    /* background-color: rgba(238, 236, 236, 0.90); */
+}

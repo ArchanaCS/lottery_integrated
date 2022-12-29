@@ -1,0 +1,40 @@
+
+.input_wrap{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    position: relative;
+    display: flex;
+}  
+.input_wrap input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #020223;
+    background-color:  white;
+    border-radius: 5px;
+    outline: none;
+    color: #020223; 
+    font-size: 1rem;
+}
+input:focus + span,input:valid+span{
+    font-size: 12px;
+    color: white;
+    left: 10px;
+    top: -5px;
+    background-color:  #020223;
+    padding: 0px 5px 0px 5px;
+}
+.input_wrap span{
+    font-size: 12px;
+    color: black;
+    padding: 14px;
+    position: absolute;
+    top:0; 
+    transition:0.6s ease all; 
+    pointer-events: none;
+    letter-spacing: .05em;
+
+  }
+  
+
+  

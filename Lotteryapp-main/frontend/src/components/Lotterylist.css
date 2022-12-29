@@ -1,0 +1,60 @@
+.Lotterylist{
+    width: 30%;
+    display:flex;
+    }
+
+.Lotterylist table  {
+    width: 100%;
+    border-radius: 8px;
+    border-collapse: collapse;
+    /* border: 1px solid lightblue; */
+    /* background-color: rgb(124, 124, 42); */
+}  
+.lottlist_tbl_row1 {
+    width: 100%;
+    text-align: center;
+    color:white;
+    /* font-family: "Lato", sans-serif; */
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+}
+.lottlist_tbl_row1_col1{
+    background-color: #00a9e0;
+    border-top-left-radius: 8px;
+    padding: 10px;
+}
+.lottlist_tbl_row1_col2{
+    background-color: #00a9e0;
+    border-top-right-radius: 8px;
+    padding: 10px;
+    border-left: 1.5px solid #0094c5;
+}
+.Lotterylist td{
+    /* width: 100%; */
+    text-align: center;
+    color:black;
+    /* font-family: "Lato", sans-serif; */
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 10px;
+
+}
+.lottlist_tbl_row2:hover{
+        /* width: 100%; */
+        text-align: center;
+        color:black;
+        /* font-family: "Lato", sans-serif; */
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        padding: 10px;
+        background-color: #eaf7fc;
+}

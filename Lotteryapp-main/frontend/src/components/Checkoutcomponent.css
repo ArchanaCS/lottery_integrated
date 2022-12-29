@@ -1,0 +1,18 @@
+.Checkoutcomponent_main {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+align-items: center;
+  /* background-color: red; */
+}
+.Checkoutcomponent_main_col {
+  width: 50%;display: flex;
+  
+}
+.left{
+    justify-content: left;
+}
+.right{
+    justify-content: right;
+}

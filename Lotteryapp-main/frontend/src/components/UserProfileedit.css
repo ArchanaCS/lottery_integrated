@@ -1,0 +1,171 @@
+/* .UserProfileedit{
+    width: 50%;
+}
+.UserProfileedit_head{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  
+}
+.UserProfileedit_head_raw1{
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_head_raw1_btn button{
+    padding: 10px;
+    background-color: rgba(3, 99, 3, 0.647);
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+    width: 100px;
+}
+.UserProfileedit_head_raw1_label label{
+    font-size: medium;
+    font-weight: 400;
+}
+.UserProfileedit_head_raw2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_head_raw2_img img{
+    width: 130px;
+    border-radius: 63px;
+}
+.UserProfileedit_head_raw2_label label{
+    font-size: medium;
+    font-weight: 400;
+    color: rgb(220, 20, 20);
+}
+.UserProfileedit_body{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+   
+}
+.UserProfileedit_body_raw1{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.UserProfileedit_body_raw2{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_body_raw1_clmn1,.UserProfileedit_body_raw1_clmn2{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_body_raw1_clmn1 input,.UserProfileedit_body_raw1_clmn2 input,.UserProfileedit_body_raw2 input{
+    border-radius: 5px;
+    border-color: rgba(30, 143, 255, 0.637);
+    padding: 7px;
+}
+.UserProfileedit_body_raw1_clmn1 label,.UserProfileedit_body_raw1_clmn2 label,.UserProfileedit_body_raw2 label{
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: large;
+} */
+
+
+.UserProfileedit{
+    /* width: 50%; */
+}
+.UserProfileedit_head{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+.UserProfileedit_head_raw1{
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_head_raw1_btn button{
+    padding: 10px;
+    background-color: rgba(3, 99, 3, 0.647);
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+    width: 100px;
+}
+.UserProfileedit_head_raw1_label label{
+    font-size: medium;
+    font-weight: 400;
+    color:goldenrod
+}
+.UserProfileedit_head_raw2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_head_raw2_img img{
+    width: 130px;
+    border-radius: 63px;
+}
+.UserProfileedit_head_raw2_label label{
+    font-size: medium;
+    font-weight: 400;
+    color: rgb(220, 20, 20);
+}
+.UserProfileedit_body{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black */
+}
+.UserProfileedit_body_raw1{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.UserProfileedit_body_raw2{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_body_raw1_clmn1,.UserProfileedit_body_raw1_clmn2{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.UserProfileedit_body_raw1_clmn1 input,.UserProfileedit_body_raw1_clmn2 input,.UserProfileedit_body_raw2 input{
+    border-radius: 5px;
+    border-color: rgba(30, 143, 255, 0.637);
+    padding: 7px;
+}
+.UserProfileedit_body_raw1_clmn1 label,.UserProfileedit_body_raw1_clmn2 label,.UserProfileedit_body_raw2 label{
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: large;
+}
+.UserProfileedit_body_raw1_clmn1 select,.UserProfileedit_body_raw1_clmn2 select{
+    border-radius: 5px;
+    /* border-color: rgba(30, 143, 255, 0.637); */
+    padding: 7px;
+    border: 2px solid  rgba(30, 143, 255, 0.637);
+
+}
+.UserProfileedit_body_raw4{
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    margin-top: 20px;
+}
+.UserProfileedit_body_raw4_btn{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.UserProfileedit_body_raw4_btn button{
+    background-color: blue;
+    color: #fff;
+    /* padding: 15px; */
+    border-radius: 10px;
+    border-style: none;
+    width: 50%;
+}

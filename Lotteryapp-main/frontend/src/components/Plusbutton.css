@@ -1,0 +1,28 @@
+.Plusbutton_plus{
+    background-color: rgba(225, 225, 225, 0.9);
+    width: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-top: 20%;
+    padding-bottom: 20%;
+    position: absolute;
+    /* overflow-x: auto;
+    max-height: calc(100vh - 30px); */
+    
+}
+.none
+{
+    display: none;
+}
+.Plusbutton_tick
+{
+    background-color: rgba(225, 225, 225, 0.5);
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-top: 210px;
+    padding-bottom: 230px;
+    position: absolute;
+}

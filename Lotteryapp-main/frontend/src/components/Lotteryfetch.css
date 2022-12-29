@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&family=EB+Garamond&display=swap");
+
+.Lotteryfetch_component1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Lotteryfetch_row1 {
+  /* height: 5vh; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+}
+.Lotteryfetch_row2 {
+  padding-top: 10px;
+  margin-bottom: 2px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+.Lotteryfetch_row2:hover {
+  transform: translateY(5px);
+}
+
+.Lotteryfetch_row1 label,
+.Lotteryfetch_row2 label {
+  color: gray;
+  font-family: "Comic Neue", cursive;
+}
+.Lotteryfetch_row1_col1 {
+  min-width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.Lotteryfetch_row1_col2 {
+  width: 70%;
+  /* background-color: red; */
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border-bottom: 1px solid rgba(128, 128, 128, 0.364); */
+}
+.Lotteryfetch_row1_col3 {
+  width: 10%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Lotteryfetch_row2_col1 {
+  min-width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 5px;
+}
+.Lotteryfetch_row2_col2 {
+  width: 50%;
+  /* background-color: red; */
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: top;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.364);
+}
+.Lotteryfetch_row2_col2 button {
+  min-width: 40px;
+  padding: 10px;
+  color: white;
+  font-family: "Comic Neue", cursive;
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+}
+.Lotteryfetch_row2_col3 {
+  width: 10%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Lotteryfetch_row2_col3 button {
+  background-color: transparent;
+  border: none;
+  font-family: "Comic Neue", cursive;
+  color: gray;
+  font-weight: 600;
+}
+
+
+.Lotteryfetch_component1_row2_numbers label{
+    height: 2vh;
+    padding: 18px;
+    background-color: rgb(0, 162, 255);
+    margin-right: 5px;
+    border-radius: 12px;
+    font-family:'Comic Neue', cursive;;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.Lotteryfetch_component1_row2_pricebuttons{
+    
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+
+}
+
+.Lotteryfetch_component1_row2_pricebuttons label{
+    width: 100%;
+    
+    padding-right: 20px;
+    font-weight: bold;
+    font-family: 'Comic Neue', cursive;;
+}
+
+.Lotteryfetch_component1_row2_pricebuttons button{
+    height: 20px;
+    border: none;
+    width: 20%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.Lotteryfetch_component1_row2_pricebuttons img{
+    height: 20px;
+}
+
+.Lotteryfetch_component1_row3{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 164px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(201, 195, 195, 0.658);
+}
+
+.Lotteryfetch_component1_row3_numbers{
+    display: flex;
+    flex-direction: row;
+    
+    padding-right: 350px;
+    
+    
+}
+
+.Lotteryfetch_component1_row3_numbers label{
+    height: 2vh;
+    padding: 17px;
+    background-color: rgb(4, 0, 255);
+    margin-right: 5px;
+    border-radius: 10px;
+    font-family:'Comic Neue', cursive;;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+
+.Lotteryfetch_component1_row3_pricebuttons label{
+    width: 100%;
+    
+    padding-right: 30px;
+    font-weight: bold;
+    font-family: 'Comic Neue', cursive;;
+}
+
+.Lotteryfetch_component1_row3_pricebuttons img{
+    height: 20px;
+}

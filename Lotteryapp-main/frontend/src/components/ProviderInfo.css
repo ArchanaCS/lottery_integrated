@@ -1,0 +1,30 @@
+.providerinfo_container{
+    background-color: #020223;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 0px;
+}
+.providerinfo_header{
+    padding: 10px;
+    color: goldenrod;
+    display: flex;
+    align-items: center;
+}
+.providerinfo_header h4{
+    margin: 0;
+}
+.providerinfo_header span{
+    font-size: 20px;
+    margin-right: 5px;
+    padding-top: 3px;
+}
+.providerinfo_subheader{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.providerinfo_subheader span{
+    font-size: 20px;
+    margin-right: 5px;
+    padding-top: 3px;
+}

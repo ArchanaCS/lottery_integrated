@@ -1,0 +1,14 @@
+.Linemessage{
+    display: flex;
+    justify-content: center;
+}
+.Linemessage_raw{
+    width: 60%;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #4b9ed22a;
+    color: #168ede;
+    font-size: small;
+    font-weight: 450;
+    padding: 10px 30px 10px 10px;
+}

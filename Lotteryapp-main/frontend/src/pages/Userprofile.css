@@ -1,0 +1,22 @@
+body{
+    font-family: sans-serif;
+}
+.userprofile_col_tab{
+    background-color: rgb(255, 255, 255);
+    margin: 10px 0px;
+    padding: 10px;
+    background-color: #171739;
+    border-radius: 10px;
+    width:50%;
+   margin-left:25%;
+}
+.userprofile_col_tab_icon{
+    display: flex;
+    align-items: center;
+    margin: 7px 0px;
+    color:goldenrod
+}
+.userprofile_col_tab_icon label{
+    margin-left: 10px;
+    color: goldenrod;
+}

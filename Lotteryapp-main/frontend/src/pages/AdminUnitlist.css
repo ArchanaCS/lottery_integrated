@@ -1,0 +1,33 @@
+.AdminUnitlist_outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.AdminUnitlist_headerUser {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.AdminUnitlist_filterbar {
+  /* background-color: red; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AdminUnitlist_unitlist {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AdminUnitlist_footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

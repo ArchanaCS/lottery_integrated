@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    min-width: 550px;
+  }
+  .timer_container {
+    background-color: black;
+    color: #ffff;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    width:90%;
+  }
+  .timer_lotteryname {
+    background-color: #171739;
+    padding: 10px 0px;
+    border-radius: 10px;
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .timer_lotteryprice {
+    background-color: #171739;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .timer_lotteryprice button{
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: rgb(255, 255, 255);
+    color: #171739;
+    border-style: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .timer_lotteryprice button:hover{
+    background-color: goldenrod;
+  }
+  .timer_lottery_countdown_sec {
+    display: flex;
+    background-color: #171739;
+    padding: 5px 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .timer_lotterydraw_date {
+    font-size: 25px;
+    width: 160px;
+  }
+  .timer_countdown {
+    display: flex;
+  }
+  .timer_countdown_sub {
+    margin: 5px;
+    width: 80px;
+  }
+  .timer_countdown {
+    margin-right: 10px;
+  }
+  
+  .CircularProgressbar-text {
+    font-size: 40px;
+  }
+  .progressbar_child {
+    font-size: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .progressbar_child h6 {
+    margin: 0;
+    font-size: 20px;
+  }
+  

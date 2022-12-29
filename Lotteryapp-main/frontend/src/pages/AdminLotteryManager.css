@@ -1,0 +1,65 @@
+.AdminLotteryManager_outer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;gap:50px;
+  }
+  .AdminLotteryManager_headerUser {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .AdminLotteryManager_row {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .AdminLotteryManager_row_col {
+    /* width: 48%;
+    background-color: rebeccapurple; */
+    /* padding: 10px; */
+  }
+  .AdminLotteryManager_tables {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    flex-wrap: wrap;
+  }
+  
+  .AdminLotteryManager_lottery {
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.109);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+    width: 80%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 30%;
+    flex-direction: column;
+  }
+  .AdminLotteryManager_lottery_btn {
+    width: 80%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: right;
+  }
+  
+  .AdminLotteryManager_footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  

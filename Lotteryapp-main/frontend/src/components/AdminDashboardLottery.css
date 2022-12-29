@@ -1,0 +1,17 @@
+.AdminDashboardLottery_row{
+    margin: 20px;
+    background-color: rgba(100, 106, 106, 0.442);
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0 0 20px rgba(122, 122, 189, 0.662);
+    padding: 10px;
+}
+.AdminDashboardLottery_row_icon{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.AdminDashboardLottery_row_icon label{
+    font-weight: 500;
+    padding-left: 10px;
+}
