@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./List.css";
-export default function Unitpending({ label1, label2, label3, array }) {
+export default function Unitpending({ label1, label2, label3, array ,varible1,varible2,varible3}) {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/AdminUnit");
@@ -16,9 +16,9 @@ export default function Unitpending({ label1, label2, label3, array }) {
         return (
           <>
             <div className="list_outer_row">
-              <p>{item.Lotterymaster}</p>
-              <p>{item.Unitssold}</p>
-              <p>{item.Unitsconfirmed}</p>
+              <p>{item[varible1]}</p>
+              <p>{item[varible2]}</p>
+              <p>{item[varible3]}</p>
             </div>
           </>
         );

@@ -41,7 +41,7 @@ export default function Provideradd() {
         
         <Collapsible
           trigger={<div>
-          <div className="provideradd_header"><span><MdArrowDropDownCircle/></span><h4>Add new provider</h4></div>
+          <div className="provideradd_header"><span><MdArrowDropDownCircle/></span><h6>Add new provider</h6></div>
         </div>}
         >
           <div className="provideradd_grid">

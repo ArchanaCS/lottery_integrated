@@ -21,6 +21,11 @@ export default function Userprofile() {
   const profile = () => {
     navigate("/Userprofile");
   };
+
+const label5click=()=>{
+  navigate("/UserPage")
+}
+
   return (
     <div className="userprofile_container">
       <div className="userprofile_header">
@@ -37,6 +42,7 @@ export default function Userprofile() {
           headerclick={profile}
           buynowclick={""}
           uname={""}
+          label5click={label5click}
         />
       </div>
 

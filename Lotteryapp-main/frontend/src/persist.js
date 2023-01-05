@@ -9,7 +9,9 @@ const persistConfig = {
 
 const initialState = { 
   final: [], 
-  linearray: []
+  linearray: [],
+  ltryid:"",
+  ltryname:""
 };
 
 function todoReducer(prevState=initialState, action) {
@@ -20,6 +22,12 @@ function todoReducer(prevState=initialState, action) {
       case 'setLineArray': 
         return {...prevState, linearray: action.payload};
         break;  
+        // case "setLtryid":
+        //   return { ...prevState, ltryid: action.payload };
+        //   break;
+        // case "setLtryname":
+        //   return { ...prevState, ltryname: action.payload };
+        //   break;
     default:
       return prevState;
   }

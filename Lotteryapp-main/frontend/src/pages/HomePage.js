@@ -1,11 +1,7 @@
 import "./HomePage.css";
 
 import HeaderUser from "../components/HeaderUser";
-// import HeaderLogout from './components/HeaderOut';
-// import Betterwin from './components/Betterwin';
 import Sliderswipe from "../components/Sliderswipe";
-import Menu from "../components/Menu";
-import LotteryUnits from "../components/LotteryUnits";
 import Animation from "../components/Animation";
 import Option from "../components/Option";
 import Footer from "../components/Footer";
@@ -14,7 +10,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import Timer from "../components/Timer";
-import { Link } from "react-router-dom";
+import { useDispatch,useSelector } from "react-redux";
+import TicketSelector from "./TicketSelector";
+
 
 function HomePage() {
   const navigate = useNavigate();
@@ -25,7 +23,10 @@ function HomePage() {
   const [count, setCount] = useState("");
   var uname = localStorage.getItem("uname");
   const userid=localStorage.getItem("userid")
+  const [lotterydetails,setLotterydetails]=useState([])
   console.log(userid)
+  // const ltryid = useSelector((state) => state.ltryid);
+  const dispatch = useDispatch();
   useEffect(() => {
     let url = "http://localhost:8080/drawticket";
     let request = {};
@@ -33,12 +34,12 @@ function HomePage() {
     axios
       .post(url, request, header)
       .then((res) => {
-        console.log(res.data);
+        console.log("draw",res.data);
         setDate(res.data[0].drawdate);
         setLotteryname(res.data[0].txtLotteryname);
         setPrize(res.data[0].txtLotteryprize);
         setLotteryid(res.data[0].id);
-        // setLotterdetails(res.data);
+        setLotterydetails(res.data);
       })
       .catch();
 
@@ -50,10 +51,12 @@ function HomePage() {
         console.log(res.data[0].count)
         if(userid=""){
           setCount(0)
+          localStorage.setItem("cartcount",count)
         }
         else
         {
           setCount(res.data[0].count)
+          localStorage.setItem("cartcount",count)
         }
         
       }).catch()
@@ -64,8 +67,8 @@ function HomePage() {
    
   };
   const registerclick = (e) => {};
-  const loginclick = (e) => {
-    navigate("/TicketSelector", { state: { id: "", name: "" } });
+  const label6click = (e) => {
+    navigate("/TicketSelector", { state: {lotterydetails:"" } });
   };
   const label7click = () => {
     navigate("/Login");
@@ -74,10 +77,19 @@ function HomePage() {
     navigate("/Signup");
   };
   const ticketPurchase = () => {
-    navigate("/TicketSelector", {
-      state: { id: lotteryid, name: lotteryname },
-    });
+   
+    navigate("/TicketSelector", { state: {lotterydetails:lotterydetails } });
+    // alert("hi")
+   
+    // console.log("id in home",id)
+    // console.log("name in home",name)
     // navigate("/TicketSelector")
+    // dispatch({ type: "setLtryid", payload: id });
+    // dispatch({ type: "setLtryname", payload: name });
+    // navigate("/TicketSelector")
+    // , {
+    //   state: { id: id, name:name },
+    // });
   };
   return (
     <div className="lottery_outer">
@@ -95,7 +107,7 @@ function HomePage() {
           label1click={""}
           label4click={buynowclick}
           label5click={registerclick}
-          label6click={loginclick}
+          label6click={label6click}
           label7click={label7click}
           label8click={label8click}
         />
@@ -106,11 +118,16 @@ function HomePage() {
       </div>
       <div className="lottery_lottunits">
         <Timer
-          details={lotteryname}
+          details={lotterydetails}
           deadline={date}
           prize={prize}
           ticketPurchase={ticketPurchase}
           lotteryid={lotteryid}
+          variable1={"id"}
+          variable2={"txtLotteryname"}
+          variable3={"txtLotteryprize"}
+          variable4={"drawdate"}
+          variable5={"txtSubLottery"}
         />
       </div>
       {/* <div className='lottery_lottunits'><LotteryUnits details={lotteryname} date={date}/></div> */}

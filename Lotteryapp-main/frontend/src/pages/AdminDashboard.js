@@ -14,9 +14,10 @@ import AddLotterycom from "../components/AddLotterycom";
 import Checkoutbutton from "../components/Checkoutbutton";
 import Unitsold from "../components/List";
 import Winners from "../components/Winners";
-import Unitpending from "../components/Unitpending";
+import Unitpending from "../components/List";
 import { BsCloudMoonFill } from "react-icons/bs";
 import { GiConsoleController } from "react-icons/gi";
+import Totalwinningvalidation from "../components/Totalwinningvalidation";
 function Dashboard() {
   const navigate = useNavigate();
 
@@ -28,6 +29,7 @@ function Dashboard() {
   const [winner, setWinner] = useState("");
   const usrname=localStorage.getItem("usrname")
   console.log("usrname",usrname)
+  const[value,setValue] =useState("false")
   useEffect(() => {
   
 
@@ -47,7 +49,7 @@ function Dashboard() {
     let req_drawlist = {};
     let header_drawlist = {};
 
-    let url_drawresult = "http://localhost:8080/latestlotterydrawresult";
+    let url_drawresult = "http://localhost:8080/upcominglotterydraws";
     let req_drawresult = {};
     let header_drawresult = {};
 
@@ -96,17 +98,22 @@ function Dashboard() {
     navigate("/Login");
   };
   const handleLotteryAdd = () => {};
-  const label4click=()=>{
-    navigate("/AdminDashboard")
+  const label4click=(e)=>{
+ 
+    navigate("/")
   }
   const label5click=()=>{
-    navigate("/AdminUnit")
+    navigate("/AdminDashboard")
   }
   const label7click=()=>{
-    navigate("/TicketSelector")
+    navigate("/LotteryManager")
+    
   }
   const label6click=()=>{
-    navigate("/LotteryManager")
+    navigate("/AdminUnit")
+  }
+  const label8click=()=>{
+    navigate("/TicketSelector", { state: { id: "", name: "" } })
   }
   return (
     <div className="AdminDashboard_outer">
@@ -116,14 +123,17 @@ function Dashboard() {
           label1={usrname}
           label2={0}
           label3={"My Cart"}
-          label4={"Dashboard"}
-          label5={"Summary"}
-          label6={"Lottery Manager"}
-          label7={"Buy Now"}
+          label4={"Home"}
+          label5={"Dashboard"}
+          label6={"Summary"}
+          label7={"Lottery Manager"}
+          label8={"Buy Now"}
           label4click={label4click}
           label5click={label5click}
           label7click={label7click}
           label6click={label6click}
+          label8click={label8click}
+        
         />
       </div>
       <div className="AdminDashboard_row">
@@ -137,6 +147,9 @@ function Dashboard() {
               label2={"Drawdate"}
               label3={"Units Sold"}
               array={unitsold}
+              variable1={"Lotterymaster"}
+              variable2={"DrawDate"}
+              variable3={"UnitSold"}
             />
           </div>
           <div className="AdminDashboard_row_col">
@@ -144,14 +157,19 @@ function Dashboard() {
               label1={"Lottery"}
               label2={"Units Confirmed"}
               label3={"Units Pending"}
-              array={unitpending}
+              array={unitsold}
+              variable1={"Lotterymaster"}
+              variable2={"UnitConfirmed"}
+              variable3={"UnitPending"}
             />
           </div>
         </div>
         
       </div>
+      
       <div className="AdminDashboard_row">
-        <Winners value1={winner} />
+      <Totalwinningvalidation/>
+        {/* <Winners value1={winner} /> */}
       </div>
 
       {/* <div className="AdminDashboard_lottery">

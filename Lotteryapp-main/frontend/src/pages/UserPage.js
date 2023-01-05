@@ -13,7 +13,8 @@ import { useState } from "react";
 function UserPage() {
   const navigate = useNavigate();
   const [array, setArray] = useState([]);
-  var uname = localStorage.getItem("usrname");
+ 
+  const usrname=localStorage.getItem('usrname')
   const mycart = () => {
     navigate("/Login");
   };
@@ -23,31 +24,41 @@ function UserPage() {
   const profile = () => {
     navigate("/Userprofile");
   };
-  const label6click = () => {
-    navigate("/Userprofile");
-  };
-  const label7click = () => {
-    navigate("/TicketSelector");
-  };
+  const label5click=()=>{
+    navigate("/UserPage")
+  }
+  const label7click=()=>{
+    // navigate("/LotteryManager")
+    
+  }
+  const label6click=()=>{
+    navigate("/Userprofile")
+  }
+  const label8click=()=>{
+    navigate("/TicketSelector", { state: { id: "", name: "" } })
+  }
+  const label4click=()=>{
+    navigate("/")
+  }
 
   return (
     <div className="userpage_outer">
       <div className="userpage_headerUser">
         {" "}
         <HeaderUser
-          label1={uname}
+          label1={usrname}
           label2={0}
           label3={"My Cart"}
-          label4={""}
+          label4={"Home"}
           label5={"Dashboard"}
           label6={"Profile"}
-          label7={"Buy Now"}
-          Loginclick={buynow}
-          cartclick={mycart}
-          headerclick={profile}
-          buynowclick={""}
-          label6click={label6click}
+          label7={"About Us"}
+          label8={"Buy Now"}
+          label4click={label4click}
+          label5click={label5click}
           label7click={label7click}
+          label6click={label6click}
+          label8click={label8click}
         />
       </div>
       <div className="userpage_col1">

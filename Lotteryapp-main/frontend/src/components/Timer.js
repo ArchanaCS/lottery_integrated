@@ -2,16 +2,17 @@ import "../components/Timer.css";
 import { useEffect, useState} from "react";
 import "react-circular-progressbar/dist/styles.css";
 import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
+import TicketSelector from "../pages/TicketSelector";
 
 //install react-circular-progressbar before using this component
 //npm install --save react-circular-progressbar
 
-export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid }) {
+export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid,variable1,variable2,variable3,variable4 ,variable5}) {
   const [day, setDay] = useState();
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
   const [second, setSecond] = useState();
-  console.log("deadline",deadline)
+  // console.log("deadline",details)
   const getDate = () => {
     const timeSeperation = Date.parse(deadline) - Date.now();
     setDay(Math.floor(timeSeperation / (1000 * 60 * 60 * 24)));
@@ -31,15 +32,24 @@ export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid 
   return (
     <>
       <div className="timer_container">
-        <div className="timer_lotteryname">
-          <label>{details}</label>
+        
+          {details.map((itm,indx)=>{
+            return<>
+            <div className="timer_lotteryname">
+            <label>{itm[variable2]}</label><br/>
+            <label>{itm[variable5]}</label>
         </div>
         <div className="timer_lotteryprice">
          <div><label>Grand draw</label>
           <br />
-          <label>INR 100000</label></div> 
-          <div><button onClick={ticketPurchase}> Buy now</button></div>
+          <label>INR {itm[variable3]}</label></div> 
+         {/* <div> <button onClick={<TicketSelector lname={itm[variable2]}/>}> Buy now</button></div> */}
+          <div><button onClick={()=>ticketPurchase()}> Buy now</button></div>
         </div>
+            </>
+          })}
+         
+       
         <div className="timer_lottery_countdown_sec">
           <div className="timer_lotterydraw_date">
             {/* <label>Saturday</label> */}

@@ -1,0 +1,15 @@
+.uservalidationfetch_container{
+    background-color: #020223;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px 15px 10px;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+.uservalidationfetch_innercontainer1 h2{
+margin-left: 5px;
+}
+.uservalidationfetch_innercontainerspan{
+    color: goldenrod;
+}

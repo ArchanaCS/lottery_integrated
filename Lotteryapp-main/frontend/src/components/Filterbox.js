@@ -9,7 +9,8 @@ export default function Filterbox({
   setPurchasedate1,
   setPurchasedate2,
   setDrawdate,
-  handleclickfilter
+  handleclickfilter,
+  
 }) {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
@@ -30,8 +31,7 @@ export default function Filterbox({
   };
 
   return showfilter ? (
-
-     <div className="Filterui">
+    <div className="Filterui">
       <div className="Filterbox">
         <div className="Filterbox_row0">
           <label>FILTER</label>
@@ -56,6 +56,7 @@ export default function Filterbox({
               show={show1}
               Name={"Lotteryname"}
               setlotteryname={(e) => setLotteryname(e.target.value)}
+              
             />
           </div>
           <div>
@@ -67,10 +68,10 @@ export default function Filterbox({
             <label>LotteryPurchasedate</label>
             <Model3
               show={show2}
-              Name1={"Date from"}
+              Name1={"Purchasedate"}
               Name2={"Date to"}
               setpurchasedate1={(e) => setPurchasedate1(e.target.value)}
-              setpurchasedate2={(e) => setPurchasedate2(e.target.value)}
+              // setpurchasedate2={(e) => setPurchasedate2(e.target.value)}
             />
           </div>
           <div>
@@ -91,41 +92,40 @@ export default function Filterbox({
           </div>
         </div>
         <div className="Filterbox_row5">
-          <button onClick={handleclickfilter}>
-            Apply Filter
-          </button>
+          <button onClick={handleclickfilter}>Apply Filter</button>
         </div>
       </div>
-       
-     </div> 
-    ) : (
-        <></>
-      );
-    }
+    </div>
+  ) : (
+    <></>
+  );
+}
 function Model1({ show, Name, setUname }) {
   return show ? (
     <>
-      <Input name={Name} onChange={setUname}/>
+      <Input name={Name} onChange={setUname} />
     </>
   ) : (
     <></>
   );
 }
-function Model2({ show, Name, setlotteryname }) {
+function Model2({ show, Name, setlotteryname}) {
   return show ? (
     <>
       <Input name={Name} onChange={setlotteryname} />
+      
+      
     </>
   ) : (
     <></>
   );
 }
-function Model3({ show, Name1, Name2, setpurchasedate1, setpurchasedate2 }) {
+function Model3({ show, Name1, Name2, setpurchasedate1, setPurchasedate2 }) {
   return show ? (
     <>
       <div className="Model3_clm">
         <Input name={Name1} onChange={setpurchasedate1} />
-        <Input name={Name2} onChange={setpurchasedate2} />
+        {/* <Input name={Name2} onChange={setpurchasedate2} /> */}
       </div>
     </>
   ) : (

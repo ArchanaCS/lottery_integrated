@@ -23,7 +23,9 @@ export default function HeaderUser({
   label6click,
   label7click,
   label8click,
-}) {
+  value
+}) 
+{
 
   const[country,setCountry]=useState("");
   const options= useMemo(() => countryList().getData(), [])
@@ -39,6 +41,7 @@ export default function HeaderUser({
     localStorage.setItem("usrname","")
     navigate("/")
    }
+   
   return (
     <div className="HeaderUser">
       <div className="Header_row1">
@@ -94,11 +97,12 @@ export default function HeaderUser({
         </div>
       </div>
       <div className="Header_row2">
-        <label onClick={(e) => label4click(e)}>{label4}</label>
-        <label onClick={(e) => label5click(e)}>{label5}</label>
-        <label onClick={(e) => label6click(e)}>{label6}</label>
-        <label onClick={(e) => label7click(e)}>{label7}</label>
-        <label onClick={(e) => label8click(e)}>{label8}</label>
+      
+        <label type={value} onClick={(e) => label4click(e)}>{label4}</label>
+        <label  onClick={(e) => label5click(e)}>{label5}</label>
+        <label  onClick={(e) => label6click(e)}>{label6}</label>
+        <label  onClick={(e) => label7click(e)}>{label7}</label>
+        <label  onClick={(e) => label8click(e)}>{label8}</label>
       </div>
     </div>
   );

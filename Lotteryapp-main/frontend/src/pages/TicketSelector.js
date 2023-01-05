@@ -13,18 +13,21 @@ import { useDispatch, useSelector } from "react-redux";
 import Input from "../components/Input";
 import { MdLocationCity } from "react-icons/md";
 import { GiConsoleController } from "react-icons/gi";
+import { CgDetailsLess } from "react-icons/cg";
 export default function TicketSelector() {
   const [value, setValue] = useState([]);
   const [err, setErrmsg] = useState("");
   const [ltryname, setLtryname] = useState("");
   const [lotterylist, setLotterylist] = useState([]);
-  const [ltryid, setltryid] = useState("");
+  const [ltryid, setltryid] = useState({ ltrid: [], ltrname: [] });
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
   const linearray = useSelector((state) => state.linearray);
   const dispatch = useDispatch();
   const location = useLocation();
   const uname = localStorage.getItem("usrname");
+  // const ltryid = useSelector((state) => state.ltryid);
+  // const ltryname = useSelector((state) => state.ltryname);
   var linenum = 3;
   var temp = [];
   // useEffect(()=>{
@@ -33,27 +36,11 @@ export default function TicketSelector() {
   let Ltr_name = "";
   const userid = localStorage.getItem("userid");
   console.log("userid", userid);
-  useEffect(() => {
-    if (location.state.name == "" && location.state.id == "") {
-      console.log("Entered with null");
-      let url = "http://localhost:8080/ticketselector_lotteryfetch";
-      let header = {};
-      let request = {};
-      axios
-        .post(url, request, header)
-        .then((res) => {
-          console.log(res.data);
-          setLotterylist(res.data);
-        })
-        .catch();
-    } else {
-      lotterylist.push({
-        id: location.state.id,
-        txtLotteryname: location.state.name,
-      });
-    }
+  const cnt = localStorage.getItem("cartcount");
 
+  useEffect(() => {
     let temp = [...linearray];
+    console.log(temp.length);
     if (temp.length == 0) {
       for (var i = 0; i < linenum; i++) {
         var tarray = [];
@@ -64,7 +51,24 @@ export default function TicketSelector() {
         temp.push(tarray);
       }
     }
+
     dispatch({ type: "setLineArray", payload: temp });
+    console.log("lineary" + JSON.stringify(linearray));
+    if (location.state.lotterydetails != "") {
+      setLotterylist(location.state.lotterydetails);
+    } else {
+      let url = "http://localhost:8080/ticketselector_lotteryfetch";
+      let header = {};
+      let request = {};
+      axios
+        .post(url, request, header)
+        .then((res) => {
+          console.log(res.data);
+          // setDetails(res.data)
+          setLotterylist(res.data);
+        })
+        .catch();
+    }
   }, []);
   const home = () => {
     navigate("/");
@@ -74,11 +78,11 @@ export default function TicketSelector() {
     if (userid == "") {
       navigate("/Login");
     } else {
-      navigate("/Checkout", {
-        state: { lid: ltryid, lname: ltryname },
-      });
+      console.log("ltryname", ltryname);
+      navigate("/Checkout", { state: { lid: ltryid, lname: "" } });
     }
   };
+
   const childdata = (e, selection, setShowchk) => {
     e.preventDefault();
     setValue(selection);
@@ -100,23 +104,40 @@ export default function TicketSelector() {
       setErrmsg("");
     }
   };
-  const callfn = () => {
-    
-    var d = document.getElementById("ddselect");
-    var selected_ticket = d.options[d.selectedIndex].text;
-    setLtryname(selected_ticket);
-   
+  const callfn = (e) => {
+    // var x = document.getElementById("abc").label;
+    // console.log("x", x);
+    // setLtryname(x);
+    // setltryid(e.target.value);
+    console.log(e.target.value);
+   let obj=JSON.parse(e.target.value)
+    console.log(obj.id);
+    setltryid(obj.id)
+    console.log(document.getElementById(obj.id))
+  
   };
-
+  const label5click = () => {
+    navigate("/");
+  };
+  const label7click = () => {
+    console.log(localStorage.getItem("role"));
+    if (localStorage.getItem("role") == 1) {
+      navigate("/AdminDashboard");
+    } else if (localStorage.getItem("role") == 2) {
+      navigate("/UserPage");
+    }
+  };
   return (
     <>
       <div className="ticketselector_outer">
         <HeaderUser
           label1={uname}
           label3={""}
-          label4={""}
-          label6={"Home"}
+          label5={"Home"}
+          label7={"Dashboard"}
           headerclick={home}
+          label5click={label5click}
+          label7click={label7click}
         />
         {/* <Drawinformation/> */}
 
@@ -124,18 +145,26 @@ export default function TicketSelector() {
           <label> Lottery Name : </label>
 
           <select
-            id="ddselect"
-            onChange={(e) => {
-              setltryid(e.target.value);
-              callfn();
-            }}
+            // value={ltryname}
+            onChange={(e) => callfn(e)}
           >
             <option>--Select--</option>
             {lotterylist.map((itm, index) => {
-              return (
+              const a=itm.id;
+              const b=itm.txtLotteryname;
+              return  (
                 <>
-                  <option value={itm.id}>{itm.txtLotteryname}</option>
-                  <option>{itm.drawdate}</option>
+                 
+                  <option
+                    value={'{"id":'+a+'}'} id={'{"id":'+a+'}'}
+                  >
+                   <label>
+                      {itm.txtLotteryname}
+                      {""}
+                      {itm.drawdate}
+                      </label>
+                  </option>
+                  <option>{itm.txtSubLottery}</option>
                 </>
               );
             })}

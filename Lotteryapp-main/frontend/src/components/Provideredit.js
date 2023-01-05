@@ -6,13 +6,10 @@ import "collapsible-react-component/dist/index.css";
 import Input from "./Input";
 import { useEffect } from "react";
 import axios from "axios";
-
 //install collapsible-react-component before using this component
 //npm i collapsible-react-component
-
 export default function Provideredit() {
-
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [providereditid, setProvidereditid] = useState("");
   const [providereditname, setProvidereditname] = useState("");
   const [providereditemail, setProvidereditemail] = useState("");
@@ -21,7 +18,6 @@ export default function Provideredit() {
   const [providereditzip, setProvidereditzip] = useState("");
   const [providereditcity, setProvidereditcity] = useState("");
   const [providerarray, setProviderarray] = useState([]);
-
   function expandCol(itm, indx) {
     let temp = [...providerarray];
     for (const itm of temp) {
@@ -37,9 +33,8 @@ export default function Provideredit() {
     setProvidereditid(temp[indx].id);
     setProviderarray(temp);
   }
-
   function handleclickPdelete() {
-    let url4 = "http://localhost:8000/deleteprovider";
+    let url4 = "http://localhost:8080/deleteprovider";
     let req4 = { providereditid: providereditid };
     let header4 = {};
     axios
@@ -48,18 +43,15 @@ export default function Provideredit() {
       .catch();
     window.location.reload();
   }
-
   function close(itm, indx) {
     let temp = [...providerarray];
     for (const itm of temp) {
       itm.isClicked = false;
     }
-
     setProviderarray(temp);
   }
-
   const handleclickSubmit = (e) => {
-    let url3 = "http://localhost:8000/editprovider";
+    let url3 = "http://localhost:8080/editprovider";
     let req3 = {
       providereditid: providereditid,
       providereditname: providereditname,
@@ -77,9 +69,8 @@ export default function Provideredit() {
       })
       .catch();
   };
-
   useEffect(() => {
-    let url2 = "http://localhost:8000/viewprovider";
+    let url2 = "http://localhost:8080/viewprovider";
     let req2 = {};
     let header2 = {};
     axios
@@ -94,7 +85,6 @@ export default function Provideredit() {
       })
       .catch();
   }, []);
-
   return (
     <>
       <div className="provideredit_container">
@@ -114,7 +104,6 @@ export default function Provideredit() {
                   </button>
                 </div>
               </div>
-
               <div className="provideredit_collapsible_content">
                 <Collapsible open={itm.isClicked}>
                   <div className="provideredit_header">
@@ -131,6 +120,7 @@ export default function Provideredit() {
                   <div className="provideredit_innerdiv">
                     {/* <div className="provideredit_innerinnerdiv"> */}
                       <div className="provideredit_input">
+                        
                         <Input
                           name="Provider Name"
                           value={providereditname}
@@ -188,7 +178,6 @@ export default function Provideredit() {
                       </div>
                     {/* </div> */}
                   </div>
-
                   <div className="provideredit_button">
                     <button
                       onClick={(e) => {

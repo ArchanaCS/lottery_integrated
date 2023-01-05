@@ -22,10 +22,19 @@ export default function Filterbar({
   onChange,
   onSearch,
   setSearchdate,
+  value,
   search_date,
   search_dropdownshow,
   setFilterSerach,
-  handleclick
+  handleclick,
+  // mainshow,
+  // setUsername,
+  // setLotteryname,
+  // setPurchasedate1,
+  // setPurchasedate2,
+  // setDrawdate,
+  // handleclickfilter
+
 }) {
   
   return (
@@ -34,6 +43,7 @@ export default function Filterbar({
         <div className="Filterbar_outer_column1">
           <input
             type={"checkbox"}
+            checked={value}
             // className="filterbar_selectall"
             onChange={handleselectall}
           />
@@ -49,7 +59,7 @@ export default function Filterbar({
           setPurchasedate1={setPurchasedate1}
           setPurchasedate2={setPurchasedate2}
           setDrawdate={setDrawdate}
-          handleclickfilter={handleclickfilter}/> */}
+          handleclickfilter={handleclickfilter}/>  */}
           </div>
           <div className="column2_inner2">
             {tasklistsearchshow ? (

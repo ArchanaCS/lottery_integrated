@@ -97,8 +97,22 @@ export default function LotteryManager() {
     navigate("/Login");
   };
   const handleLotteryAdd = () => {};
-  const label6click=()=>{
+  const label4click=(e)=>{
+ 
+    navigate("/")
+  }
+  const label5click=()=>{
+    navigate("/AdminDashboard")
+  }
+  const label7click=()=>{
     navigate("/LotteryManager")
+    
+  }
+  const label6click=()=>{
+    navigate("/AdminUnit")
+  }
+  const label8click=()=>{
+    navigate("/TicketSelector", { state: { id: "", name: "" } })
   }
   return (
     <div className="AdminLotteryManager_outer">
@@ -108,12 +122,16 @@ export default function LotteryManager() {
           label1={uname}
           label2={0}
           label3={"My Cart"}
-          label4={"Dashboard"}
-          label5={"Summary"}
-          label6={"Lottery Manager"}
-          label7={"Buy Now"}
-          Loginclick={LogIn}
+          label4={"Home"}
+          label5={"Dashboard"}
+          label6={"Summary"}
+          label7={"Lottery Manager"}
+          label8={"Buy Now"}
+          label4click={label4click}
+          label5click={label5click}
+          label7click={label7click}
           label6click={label6click}
+          label8click={label8click}
         />
       </div>
        <div className="LotteryManager_row1">

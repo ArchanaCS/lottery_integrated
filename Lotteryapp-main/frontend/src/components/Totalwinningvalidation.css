@@ -1,0 +1,51 @@
+.totalwinning_container {
+    background-color: #020223;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 15px;
+    width:70%;
+  }
+  .totalwinning_header {
+    display: flex;
+    justify-content: space-between;
+    color: goldenrod;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .totalwinning_subheader {
+    display: flex;
+    justify-content: space-between;
+    color: goldenrod;
+    padding: 10px;
+  }
+  .totalwinning_header h4 {
+    margin: 5px 0px;
+    /* font-size: 16px; */
+  }
+  .totalwinning_providerlist {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #212155;
+    margin-bottom: 5px;
+    border-radius: 6px;
+  }
+  .totalwinning_providerlist_inner {
+    display: flex;
+    align-items: center;
+  }
+  .totalwinning_providerlist span {
+    margin-right: 5px;
+  }
+  .totalwinning_lotterylist {
+    display: flex;
+    justify-content: space-between;
+    background-color: #171739;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+  
+    border-radius: 6px;
+  }

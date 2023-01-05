@@ -1,6 +1,8 @@
 import { legacy_createStore } from "redux";
 const initialState = {
-  final:[]
+  final: [],
+  ltryid: "",
+  ltryname: "",
 };
 // {type: "setText", payload:"test"}
 const reducer = (prevState = initialState, action) => {
@@ -8,7 +10,12 @@ const reducer = (prevState = initialState, action) => {
     case "setFinal":
       return { ...prevState, final: action.payload };
       break;
-    
+    // case "setLtryid":
+    //   return { ...prevState, ltryid: action.payload };
+    //   break;
+    // case "setLtryname":
+    //   return { ...prevState, ltryname: action.payload };
+    //   break;
   }
   return prevState;
 };

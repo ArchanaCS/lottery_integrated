@@ -1,7 +1,7 @@
 import "./Drawresult.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-export default function Drawresult() {
+export default function Drawresult({array1,array2}) {
 
 
 
@@ -13,25 +13,25 @@ export default function Drawresult() {
   const[lotteryresult, setLotteryresult]=useState([]);
   const[latestlotteryresult, setLatestLotteryresult]=useState([]);
 
-  useEffect(()=>{
-    let url="http://localhost:8080/lotterydrawresult";
-    let req={};
-    let header={};
-    axios.post(url,req,header).then((res) => {
-      setLotteryresult(res.data);
-      console.log("lotteryresult",res.data);
-    }).catch();
+//   useEffect(()=>{
+//     let url="http://localhost:8080/lotterydrawresult";
+//     let req={};
+//     let header={};
+//     axios.post(url,req,header).then((res) => {
+//       setLotteryresult(res.data);
+//       console.log("lotteryresult",res.data);
+//     }).catch();
   
 
-  let url1="http://localhost:8080/latestlotterydrawresult";
-  let req1={};
-  let header1={};
-  axios.post(url1,req1,header1).then((res) => {
-    setLatestLotteryresult(res.data);
-    console.log("latestlotteryresult",res.data);
-  }).catch();
+//   let url1="http://localhost:8080/latestlotterydrawresult";
+//   let req1={};
+//   let header1={};
+//   axios.post(url1,req1,header1).then((res) => {
+//     setLatestLotteryresult(res.data);
+//     console.log("latestlotteryresult",res.data);
+//   }).catch();
 
-},[]); 
+// },[]); 
 
   return (
     <div className="drawres_container">
@@ -55,13 +55,13 @@ export default function Drawresult() {
                   <p>Lottery Name</p>
                   <p>Amount</p>
                 </div>
-                {lotteryresult.map((itm,index)=>{
+                {array2.map((itm,index)=>{
                   return(
                     <div className="drawres_body_sec_lft_row">
                   <div className="drawres_sec_lft_row_div">
                     <div className="drawres_sec_lft_row_inner_div">
-                      <p>{itm.txtLotteryname}</p>
-                      <p>{itm.txtLotteryprize}</p>
+                    <p>{itm.txtLotteryname}</p>
+                      <p>{itm.txtCost}</p>
                     </div>
                   </div>
                 </div>

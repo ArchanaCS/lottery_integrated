@@ -5,7 +5,7 @@
     background-color: #020223;
     padding:  5px 10px;
 }
-.provideredit_list button{
+.provideredit_list  button{
     margin-right: 8px;
     border: none;
     padding: 5px;
@@ -14,10 +14,24 @@
     background-color: #020223;
     padding: 10px;
 }
+.provideredit_innerdiv{
+    display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) ;
+}
+/* .provideredit_innerinnerdiv{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+   } */
+.provideredit_button{
+    display: flex;
+    justify-content: center;
+}
 .provideredit_button button{
     padding: 10px;
     margin-top: 15px;
-    width: 100%;
+    width: 216px;
     border-radius: 5px;
     background-color: goldenrod;
     color: white;
@@ -26,3 +40,21 @@
         background-color: rgba(218, 165, 32, 0.774);
         cursor: pointer;
     }
+.provideredit_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.provideredit_header{
+    border: none;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+

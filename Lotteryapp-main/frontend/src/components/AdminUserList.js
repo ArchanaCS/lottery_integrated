@@ -1,9 +1,10 @@
-import "../components/AdminUserList.css"
-export default function AdminUserList({data,handlechange}){
-    
-    return(
-        <>
-         <table>
+import "../components/AdminUserList.css";
+export default function AdminUserList({ data,handlechange}) {
+  
+  return (
+    <>
+      <table>
+        <tbody>
           <tr>
             <th></th>
             <th>ID</th>
@@ -13,26 +14,32 @@ export default function AdminUserList({data,handlechange}){
             <th>LotteryPurchasedate</th>
             <th>LotteryDrawdate</th>
           </tr>
-         
-          {data.map((item,index)=>{
-            return<>
-            <tr>
-           <td>
-            
-              <input type={"checkbox"} name={index} onChange={handlechange} checked={item.ischecked}/>
-            </td>
-            <td>{item.id}</td>
-            <td>{item.txtFname}{item.txtLname}</td>
-            <td>{item.txtaddress}</td>
-            <td>{item.txtLotteryname}</td>
-            <td>{item.purchasedate}</td>
-            <td>{item.lotterydrawdate}</td>
-          </tr>
-         
-            </>
+          {data?.map((item, index) => {
+            return (
+              <>
+                <tr key={item.no}>
+                  <td>
+                    <input
+                      type={"checkbox"}
+                      value={index}
+                      onChange={(e) => {
+                        handlechange(e.target.value);
+                      }}
+                      checked={item.ischecked}
+                    />
+                  </td>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.txtaddress}</td>
+                  <td>{item.txtLotteryname}</td>
+                  <td>{item.purchasedate}</td>
+                  <td>{item.lotterydrawdate}</td>
+                </tr>
+              </>
+            );
           })}
-           </table>
-        
-        </>
-    );
-  }
+        </tbody>
+      </table>
+    </>
+  );
+}

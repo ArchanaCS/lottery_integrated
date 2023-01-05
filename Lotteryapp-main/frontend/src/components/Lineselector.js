@@ -22,6 +22,9 @@ export default function Lineselector({
   // const [final, setFinal] = useState([]])
   let selectionarray = [];
   const linearray = useSelector((state) => state.linearray);
+  const ltryid = useSelector((state) => state.ltryid);
+  const ltryname = useSelector((state) => state.ltryname);
+  console.log("id and name",ltryid,ltryname)
   const dispatch = useDispatch();
   var num = 3;
   var limit = 39;

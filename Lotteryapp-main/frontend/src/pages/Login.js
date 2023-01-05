@@ -15,7 +15,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errmsg, setErrmsg] = useState("");
-  
+  const [userrole,setUserrole]=useState("")
   const login = () => {
     console.log("hi");
     let url = "http://localhost:8080/uservalidate";
@@ -37,6 +37,7 @@ function Login() {
           localStorage.setItem("userid",res.data[0].id)
           localStorage.setItem("usrname",res.data[0].txtFname)
           console.log("username",res.data[0].txtFname)
+          localStorage.setItem("role",res.data[0].refUserRole)
           if(res.data[0].refUserRole==1)
           {
             navigate("/AdminDashboard")
