@@ -4,9 +4,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Cartitems({label1}) {
-  const [array, Setarray] = useState([]);
+export default function Cartitems({label1,array}) {
+  // const [array, Setarray] = useState([]);
   const id = localStorage.getItem("id");
+  console.log("array",array)
   const dispatch=useDispatch();
   useEffect(() => {
     // let url = "http://localhost:8080/unitcheckout";
@@ -22,28 +23,28 @@ export default function Cartitems({label1}) {
     //     console.log(err);
     //   });
   }, []);
-  const handleDeleteClick = (indx) => {
-    const tempsel = [...linearray];
-    console.log("tempsel",tempsel)
-    for (const eleent of tempsel[indx]) {
+  const handleDeleteClick = (id) => {
+    // const tempsel = [...linearray];
+    // console.log("tempsel",tempsel)
+    // for (const eleent of tempsel[indx]) {
       
-      eleent.isselected = false;
-    }
-     dispatch({ type: "setLineArray", payload: tempsel });
+    //   eleent.isselected = false;
+    // }
+    //  dispatch({ type: "setLineArray", payload: tempsel });
     
-    // let url = "http://localhost:8080/unitdelete";
-    // let request = { id: id };
-    // let header = {};
-    // axios
-    //   .post(url, request, header)
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     // Setarray(res.data);
-    //     window.location.reload();
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    let url = "http://localhost:8000/unitdelete";
+    let request = { id: id };
+    let header = {};
+    axios
+      .post(url, request, header)
+      .then((res) => {
+        console.log(res.data);
+        // Setarray(res.data);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   //   const [pricearray, SetPricearray] = useState([]);
@@ -107,10 +108,43 @@ export default function Cartitems({label1}) {
       <div className="Cartitems_row2">
         <div className="Cartitems_row2_col1">
           <label>{label1}</label>
-          {/* <label>{"12-12-2022"}</label> */}
+        
         </div>
         <div className="Cartitems_row2_col2">
-          {linearray.map((itm, indx) => {
+        
+          {array.map((item,index)=>{
+             
+            return<>
+           <div className="Cartitems_row2_col2_row1">
+            <div className="Cartitems_row2_col2_row1_col1">{item.txtLotteryname}</div>
+            <div className="Cartitems_row2_col2_row1_col2">
+
+                  {JSON.parse(item.txtLotteryNumber).map((it,ind)=>{
+                    return<>
+                    <button>{it}</button>
+                    </>
+                  })}
+                 
+            </div>
+            
+           
+            <div className="Cartitems_row2_col3">
+             
+            <button
+                    onClick={(e) => {
+                      handleDeleteClick(item.id);
+                    }}
+                  >
+                    X
+                  </button>
+                 
+                
+                </div>
+                </div>
+            </>
+          })}
+           
+          {/* {linearray.map((itm, indx) => {
             return (
               <div className="Cartitems_row2_col2_row1">
                 {itm.map((citem,cindx) => {
@@ -136,11 +170,11 @@ export default function Cartitems({label1}) {
                   >
                     X
                   </button>
-                  {/* <img src={editicon} /> */}
+                
                 </div>
               </div>
             );
-          })}
+          })} */}
         </div>
         {/* <div className="Cartitems_row2_col3">
                 <button

@@ -136,7 +136,7 @@ app.post("/confirmuser", (req, res) => {
 
 app.post("/drawticket", (req, res) => {
   let sql =
-    "SELECT tm.id ,tm .txtLotteryname as main_ltry ,tb.id as sub_id,tb.txtLotteryname as sub_ltry ,tm.txtFirstprize, date_format( tm.dtLotterydrawdate,'%Y-%m-%d') as drawdate  from tbllotterymaster tm left join tbllotterymaster tb on tm.txtSubLottery=tb.id WHERE tm.dtLotterydrawdate > NOW()ORDER BY tm.dtLotterydrawdate LIMIT 1; ";
+    "SELECT tm.id ,tm .txtLotteryname as main_ltry ,tb.id as sub_id,tb.txtLotteryname as sub_ltry ,tm.txtFirstprize, date_format( tm.dtLotterydrawdate,'%Y-%m-%d') as drawdate,date_format(tb.dtLotterydrawdate,'%Y-%m-%d') as sub_drawdate from tbllotterymaster tm left join tbllotterymaster tb on tm.txtSubLottery=tb.id WHERE tm.dtLotterydrawdate > NOW()ORDER BY tm.dtLotterydrawdate LIMIT 1; ";
   con.query(sql, (err, result) => {
     res.send(result);
     console.log(result);
@@ -470,7 +470,7 @@ app.post("/search_date", (req, res) => {
 
 app.post("/viewprovider", (req, res) => {
   var sql =
-    "SELECT id, txtProvidername,txtEmail,txtContactnumber,txtRegisteredaddress,txtZipcode,refCity FROM lotterydrum.tblprovider;";
+    "SELECT * FROM lotterydrum.tblunit;SELECT id, txtProvidername,txtEmail,txtContactnumber,txtRegisteredaddress,txtZipcode,refState FROM lotterydrum.tblprovider;";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log(result);
@@ -617,7 +617,7 @@ app.post("/addlotteryexist", function (req, res) {
 app.post("/addlotterydetails", function (req, res) {
   let id = req.body.id;
   var sql =
-    "select dtLotterydrawdate,txtLotteryprize,txtCost,txtStartRange,txtEndRange,txtSelectionLimit,txtPurchaseLimit,txtSubLottery from tbllotterymaster where id = '" +
+    "select dtLotterydrawdate,txtFirstprize,txtCost,txtStartRange,txtEndRange,txtSelectionLimit,txtPurchaseLimit,txtSubLottery from tbllotterymaster where id = '" +
     id +
     "';";
   con.query(sql, function (err, result) {
@@ -808,7 +808,7 @@ app.post("/subltryfetch",(req,res)=>{
 
 
 app.post("/purchasedloryfetch",(req,res)=>{
-  let sql="select tu.id,tu.txtLotteryNumber ,tm.txtLotteryname ,tm.dtLotterydrawdate from  tblunit tu join tbllotterymaster tm where tu.refLotterymaster=tm.id and tu.txtDeleteflag=0 and refUser=1 and current_date() < tm.dtLotterydrawdate;";
+  let sql="select tu.id ,tm.txtLotteryname,tu.txtLotteryNumber from tblunit tu left join tbllotterymaster tm on tu.refLotterymaster=tm.id where tu.refUser=2 and tu.txtDeleteflag=0 and tu.txtPurchaseddate < tm.dtLotterydrawdate;";
   con.query(sql,(err,result)=>{
     if(err)throw err;
     res.send(result)
@@ -817,6 +817,6 @@ app.post("/purchasedloryfetch",(req,res)=>{
   })
 
 })
-app.listen(8080, () => {
+app.listen(8000, () => {
   console.log("listening on port");
 });

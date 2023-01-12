@@ -29,13 +29,13 @@ export default function HeaderUser({
 
   const[country,setCountry]=useState("");
   const options= useMemo(() => countryList().getData(), [])
-  console.log(options)
+  // console.log(options)
   const navigate = useNavigate();
 
   const handlechange=country=>{
     setCountry(country)
   }
-  console.log(country.label)
+  // console.log(country.label)
    const countrydropstyle={Select: (styles) => ({...styles,backgroundColor:"#020223",color:"white"}),option:(styles)=>{return{...styles,backgroundColor:"#020223",color:"cornflowerblue"}}};
    const logout=()=>{
     localStorage.setItem("usrname","")

@@ -33,15 +33,22 @@
     justify-content: center;
 }
 .ticketselector_lotteryname{
-    /* background-color: aqua; */
+   
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    margin-right:30px;
+
+}
+.ticketslector_lotterybuynow{
+    display: flex;
+    justify-content: center;
 }
 .ticketselector_lotteryname select {
    background-color: white;
    border:none;
    outline:none;
+   margin-left:10px
 }
 .ticketselector_lotteryname{
     /* background-color: black; */

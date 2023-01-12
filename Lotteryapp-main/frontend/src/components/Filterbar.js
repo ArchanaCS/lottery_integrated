@@ -10,7 +10,6 @@ import Filterbox from "./Filterbox";
 export default function Filterbar({
   DeleteFunc,
   editshow,
-  handleselectall,
   handleclick1,
   handleclickfilterbar_filter,
   tasklistsearchshow,
@@ -22,30 +21,23 @@ export default function Filterbar({
   onChange,
   onSearch,
   setSearchdate,
-  value,
   search_date,
   search_dropdownshow,
+  handleselectall,value,
   setFilterSerach,
-  handleclick,
-  // mainshow,
-  // setUsername,
-  // setLotteryname,
-  // setPurchasedate1,
-  // setPurchasedate2,
-  // setDrawdate,
-  // handleclickfilter
-
+  setSerach,
+  handleclick
 }) {
-  
   return (
     <>
       <div className="Filterbar_outer">
         <div className="Filterbar_outer_column1">
           <input
             type={"checkbox"}
-            checked={value}
             // className="filterbar_selectall"
+            checked={value}
             onChange={handleselectall}
+
           />
           <label>Select All</label>
         </div>
@@ -53,13 +45,6 @@ export default function Filterbar({
           <div className="column2_inner1" onClick={handleclickfilterbar_filter}>
             <BsFilter className="column2_inner1_Filter" />
             <label  onClick={handleclick}>Filters</label>
-            {/* <Filterbox showfilter={mainshow}
-          setName={setUsername}
-          setLotteryname={setLotteryname}
-          setPurchasedate1={setPurchasedate1}
-          setPurchasedate2={setPurchasedate2}
-          setDrawdate={setDrawdate}
-          handleclickfilter={handleclickfilter}/>  */}
           </div>
           <div className="column2_inner2">
             {tasklistsearchshow ? (
@@ -110,8 +95,9 @@ export default function Filterbar({
                   type={"text"}
                   placeholder="Search"
                   className="filterbar_search"
-                  onChange={(e)=>setFilterSerach(e.target.value)}
-
+                  // onChange={(e)=>setFilterSerach(e.target.value)}
+                  onChange={(e)=>{setSerach(e.target.value)}}
+                  
                 />
               </>
             )}

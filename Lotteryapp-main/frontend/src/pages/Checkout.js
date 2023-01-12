@@ -9,16 +9,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {useLocation} from 'react-router-dom';
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { GiConsoleController } from "react-icons/gi";
 export default function Checkout({ linenum }) {
   const linearray = useSelector((state) => state.linearray);
   const navigate=useNavigate();
   const usrname=localStorage.getItem("usrname")
   console.log("usrname",usrname)
   const location = useLocation();
+  const dispatch = useDispatch();
+  const [array,setArray]=useState([])
   const userid=localStorage.getItem("userid")
+  useEffect(()=>{
+    
+    console.log(location.state.subltryid)
+    let url="http://localhost:8000/purchasedloryfetch";
+    let request={};
+    let header={};
+    axios.post(url,request,header).then((res)=>{
+      console.log("Array chkout",res.data)
+      setArray(res.data)
+    }).catch()
+  },[])
   const chkout = () => {
 
-    let url = "http://localhost:8080/insertunit";
+    let url = "http://localhost:8000/insertunit";
     let header = {};
 
     const valu = [];
@@ -34,12 +49,18 @@ export default function Checkout({ linenum }) {
     for (var i = 0; i < valu.length; i++) {
       if(valu[i]!="")
       {
-        let request = { uid :userid,lid: location.state.lid, arr: valu[i] };
+        let request = { uid :2,lid: 3, arr: valu[i] };
        console.log(request)
         axios
           .post(url, request, header)
           .then((res) => {
             console.log(res.data);
+           if(res.data!="Error")
+           {
+            dispatch({ type: "setLineArray", payload: [] });
+            
+          
+           }
           })
           .catch();
 
@@ -64,16 +85,16 @@ export default function Checkout({ linenum }) {
         <div className="Checkout_header">
           <Header />
         </div>
-        <div>{location.state.lid}</div>
+       
         <div className="Checkout_cartheader">
           <CartHeader />
         </div>
         <div className="Checkout_cartitems">
-          <Cartitems label1={location.state.lname}/>
+          <Cartitems label1={location.state.lname} array={array}/>
         </div>
-        <div className="Checkout_total">
+        {/* <div className="Checkout_total">
           <CheckoutTotal />
-        </div>
+        </div> */}
         <div className="Checkout_click" onClick={chkout}>
           <Checkoutclick chkout={chkout} />
         </div>

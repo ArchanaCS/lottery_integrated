@@ -1,5 +1,5 @@
 import "../components/AdminUserList.css";
-export default function AdminUserList({ data,handlechange}) {
+export default function AdminUserlist({ data,handlechange}) {
   
   return (
     <>
@@ -14,7 +14,7 @@ export default function AdminUserList({ data,handlechange}) {
             <th>LotteryPurchasedate</th>
             <th>LotteryDrawdate</th>
           </tr>
-          {data?.map((item, index) => {
+          {data.map((item, index) => {
             return (
               <>
                 <tr key={item.no}>
@@ -33,7 +33,7 @@ export default function AdminUserList({ data,handlechange}) {
                   <td>{item.txtaddress}</td>
                   <td>{item.txtLotteryname}</td>
                   <td>{item.purchasedate}</td>
-                  <td>{item.lotterydrawdate}</td>
+                  <td>{item.drawdate}</td>
                 </tr>
               </>
             );

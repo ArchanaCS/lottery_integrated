@@ -2,36 +2,37 @@ body {
     font-family: sans-serif;
     min-width: 550px;
   }
-  .timer_container {
+  .lotterybuynow_container {
     background-color: black;
     color: #ffff;
     border-radius: 15px;
-    padding: 15px;
+    padding: 5px;
     margin: 10px;
-    width:80%;
+    width:50%;
+    
   }
-  .timer_lotteryname {
+  .lotterybuynow_lotteryname {
     background-color: #171739;
     padding: 10px 0px;
     border-radius: 10px;
-    font-size: 45px;
+    font-size:1.5rem;
     margin-bottom: 10px;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     
   }
-  .timer_lotteryprice {
+  .lotterybuynow_lotteryprice {
     background-color: #171739;
-    padding: 10px 10px;
+    padding: 5px 5px;
     border-radius: 10px;
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 1.2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
-  .timer_lotteryprice button{
+  .lotterybuynow_lotteryprice button{
     padding: 15px 20px;
     border-radius: 10px;
     margin-right: 10px;
@@ -41,10 +42,10 @@ body {
     font-size: 14px;
     cursor: pointer;
   }
-  .timer_lotteryprice button:hover{
+  .lotterybuynow_lotteryprice button:hover{
     background-color: goldenrod;
   }
-  .timer_lottery_countdown_sec {
+  .lotterybuynow_lottery_countdown_sec {
     display: flex;
     background-color: #171739;
     padding: 5px 10px;
@@ -52,26 +53,26 @@ body {
     align-items: center;
     justify-content: space-between;
   }
-  .timer_lotterydraw_date {
-    font-size: 25px;
+  .lotterybuynow_lotterydraw_date {
+    font-size: 1rem;
     width: 160px;
   }
-  .timer_countdown {
+  .lotterybuynow_countdown {
     display: flex;
   }
-  .timer_countdown_sub {
+  .lotterybuynow_countdown_sub {
     margin: 5px;
-    width: 80px;
+    width: 50px;
   }
-  .timer_countdown {
+  .lotterybuynow_countdown {
     margin-right: 10px;
   }
   
   .CircularProgressbar-text {
-    font-size: 40px;
+    font-size: .7rem;
   }
   .progressbar_child {
-    font-size: 10px;
+    font-size: .6rem;
   
     display: flex;
     flex-direction: column;
@@ -79,9 +80,9 @@ body {
   }
   .progressbar_child h6 {
     margin: 0;
-    font-size: 20px;
+    font-size: .6rem;
   }
-  .timer_lotteryname button{
+  .lotterybuynow_lotteryname button{
     width: 100%;
     font-size: 1.5rem;
     border-radius: 20px;

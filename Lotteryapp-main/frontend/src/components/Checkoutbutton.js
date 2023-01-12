@@ -5,7 +5,7 @@ export default function Checkoutbutton({ value2 ,chkout,linenum}) {
   console.log("chkouttn")
   return (
     <div className="Checkoutbutton">
-      <button onClick={chkout} linenum={linenum}>{value2}</button>
+      <button onClick={chkout} linenum={linenum} >{value2}</button>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import "../components/Timer.css";
+import "../components/Lotterybuynow.css";
 import { useEffect, useState} from "react";
 import "react-circular-progressbar/dist/styles.css";
 import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
@@ -7,7 +7,7 @@ import TicketSelector from "../pages/TicketSelector";
 //install react-circular-progressbar before using this component
 //npm install --save react-circular-progressbar
 
-export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid,variable1,variable2,variable3,variable4 ,variable5}) {
+export default function Lotterybuynow({ details,deadline,prize,ticketPurchase,lotteryid,variable1,variable2,variable3,variable4 ,variable5}) {
   const [day, setDay] = useState();
   const [hour, setHour] = useState();
   const [minute, setMinute] = useState();
@@ -31,17 +31,16 @@ export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid,
   }, []);
   return (
     <>
-      <div className="timer_container">
+      <div className="lotterybuynow_container">
         
           {details.map((itm,indx)=>{
             return<>
-            <div className="timer_lotteryname">
+            <div className="lotterybuynow_lotteryname">
             <label>{itm[variable2]}</label>
-            <div><button onClick={()=>ticketPurchase()}> Buy now</button></div>
-            <label>{itm[variable5]}</label>
+            {/* <label>{itm[variable5]}</label> */}
         </div>
-        <div className="timer_lotteryprice">
-         <div><label>Grand draw</label>
+        <div className="lotterybuynow_lotteryprice">
+         <div>
           <br />
           <label>INR {itm[variable3]}</label></div> 
          {/* <div> <button onClick={<TicketSelector lname={itm[variable2]}/>}> Buy now</button></div> */}
@@ -51,14 +50,14 @@ export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid,
           })}
          
        
-        <div className="timer_lottery_countdown_sec">
-          <div className="timer_lotterydraw_date">
+        <div className="lotterybuynow_lottery_countdown_sec">
+          <div className="lotterybuynow_lotterydraw_date">
             {/* <label>Saturday</label> */}
             <br />
             <label>{deadline}</label>
           </div>
-          <div className="timer_countdown">
-            <div className="timer_countdown_sub">
+          <div className="lotterybuynow_countdown">
+            <div className="lotterybuynow_countdown_sub">
               <CircularProgressbarWithChildren value={day} styles={buildStyles({
           pathColor: "goldenrod",
           trailColor: "white"})}>
@@ -70,7 +69,7 @@ export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid,
                 </div>
               </CircularProgressbarWithChildren>
             </div>
-            <div className="timer_countdown_sub">
+            <div className="lotterybuynow_countdown_sub">
               <CircularProgressbarWithChildren value={hrtoper} styles={buildStyles({
           pathColor: "goldenrod",
           trailColor: "white"})}>
@@ -82,7 +81,7 @@ export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid,
                 </div>
               </CircularProgressbarWithChildren>
             </div>
-            <div className="timer_countdown_sub">
+            <div className="lotterybuynow_countdown_sub">
               <CircularProgressbarWithChildren value={mintoper} styles={buildStyles({
           pathColor: "goldenrod",
           trailColor: "white"})}>
@@ -94,7 +93,7 @@ export default function Timer({ details,deadline,prize,ticketPurchase,lotteryid,
                 </div>
               </CircularProgressbarWithChildren>
             </div>
-            <div className="timer_countdown_sub">
+            <div className="lotterybuynow_countdown_sub">
               <CircularProgressbarWithChildren value={sectoper} styles={buildStyles({
           pathColor: "goldenrod",
           trailColor: "white"})}>

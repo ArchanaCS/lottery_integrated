@@ -10,8 +10,10 @@ const persistConfig = {
 const initialState = { 
   final: [], 
   linearray: [],
+  offerarray:[],
   ltryid:"",
-  ltryname:""
+  ltryname:"", 
+  issubidexist:false
 };
 
 function todoReducer(prevState=initialState, action) {
@@ -21,6 +23,9 @@ function todoReducer(prevState=initialState, action) {
       break;  
       case 'setLineArray': 
         return {...prevState, linearray: action.payload};
+        break;
+        case 'setOfferArray': 
+        return {...prevState, offerarray: action.payload};
         break;  
         // case "setLtryid":
         //   return { ...prevState, ltryid: action.payload };
@@ -28,6 +33,8 @@ function todoReducer(prevState=initialState, action) {
         // case "setLtryname":
         //   return { ...prevState, ltryname: action.payload };
         //   break;
+        case "issubidexist":
+          return {...prevState, issubidexist:action.payload}
     default:
       return prevState;
   }

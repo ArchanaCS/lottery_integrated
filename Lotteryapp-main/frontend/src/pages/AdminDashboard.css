@@ -17,6 +17,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin-left:10px;
 }
 
 .AdminDashboard_row_col {
@@ -61,4 +62,11 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.AdminDashboard_row_col1{
+  width:40%;
+  
+}
+.AdminDashboard_row_col2{
+  width:40%;
 }

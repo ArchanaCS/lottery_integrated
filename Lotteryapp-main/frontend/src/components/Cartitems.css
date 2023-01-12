@@ -20,11 +20,13 @@
   padding-top: 10px;
   margin-bottom: 2px;
   padding-bottom: 10px;
-  display: flex;
+  /* margin-left: 10%; */
+  /* display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  /* background-color: red; */
+  justify-content: space-between; */
+  
+  width:100%
 }
 .Cartitems_row2:hover {
   transform: translateY(5px);
@@ -67,10 +69,11 @@
   flex-direction: column;
   justify-content: left;
   padding: 5px;
+ 
 }
 .Cartitems_row2_col2 {
   /* width: 50%; */
-  /* background-color: red; */
+  /* background-color: blue; */
   padding-bottom: 25px;
   display: flex;
   flex-direction: column;
@@ -94,6 +97,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+ 
 }
 .Cartitems_row2_col3 button {
   background-color: transparent;
@@ -195,14 +199,29 @@
   flex-direction: row;
   justify-content:space-between;
   margin-bottom:10px;
+  /* border-radius: 1px solid grey;; */
   
 }
 .Cartitems_row2_col2_row1 button{
   color:black;
-  background-color: white;
+ 
 }
 .Cartitems_row2_col2_tst2{
  display: flex;
  justify-content: space-evenly;
 
+}
+.Cartitems_row2_col2_row1_col1{
+  width:30%;
+  
+}
+.Cartitems_row2_col2_row1_col2{
+  width: 30%;
+ 
+}
+.Cartitems_row2_col2_row1_col2 button{
+margin-left:3px;
+padding:2px 2px 2px 2px;
+background-color: #2A687C;
+color:white
 }

@@ -10,6 +10,7 @@ import Timer from "../components/Timer";
 import Collapsible from "react-collapsible";
 import { GrAddCircle } from "react-icons/gr";
 import { useState } from "react";
+import Userdetails from "./Userdetails";
 function UserPage() {
   const navigate = useNavigate();
   const [array, setArray] = useState([]);
@@ -62,11 +63,12 @@ function UserPage() {
         />
       </div>
       <div className="userpage_col1">
-      <div className="userpage_lottunits">
+        <Userdetails/>
+      {/* <div className="userpage_lottunits">
         <Timer />
-        </div>
+        </div> */}
 
-      <div className="userpage_col_tab">
+      {/* <div className="userpage_col_tab">
         <Collapsible
           trigger={
             <div className="userpage_col_tab_icon">
@@ -77,7 +79,7 @@ function UserPage() {
         >
           <List array={array} />
         </Collapsible>
-      </div>
+      </div> */}
       </div>
       <div className="userpage_list">
         {/* <List label1={"Lotteryname"} label2={"Numbers"} label3={"status"} /> */}

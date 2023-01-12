@@ -7,7 +7,7 @@ import Sucess from "./pages/Sucess";
 import Failure from "./pages/Failure";
 import Login from "./pages/Login";
 import HomePage from "./pages/HomePage";
-import UserPage from "./pages/UserPage";
+import UserPage from "./pages/Userdetails";
 import Checkout from "./pages/Checkout";
 import Userprofile from "./pages/Userprofile";
 import TicketSelector from "./pages/TicketSelector";

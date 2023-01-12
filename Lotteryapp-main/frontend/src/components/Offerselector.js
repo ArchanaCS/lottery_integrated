@@ -7,33 +7,33 @@ import { GiSteampunkGoggles } from "react-icons/gi";
 import { MdSportsTennis } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-export default function Lineselector({
+export default function Offerselector({
   label1,
   setValue,
   childdata,
   lineindex,
   ltryid,
+  show
 }) {
   const [count, setCount] = useState(0);
   const [temparr, setTemparr] = useState([]);
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
   const [showchk, setShowchk] = useState(false);
   const [selection, setSelection] = useState([]);
   const [arr, setArr] = useState([]);
   // const [final, setFinal] = useState([]])
-  let selectionarray = [];
-  const linearray = useSelector((state) => state.linearray);
+  let selectionarray = []; 
   const offerarray = useSelector((state) => state.offerarray);
   // const ltryid = useSelector((state) => state.ltryid);
   const ltryname = useSelector((state) => state.ltryname);
-  // console.log("id and name", ltryid, ltryname);
+  console.log("id and name", ltryid, ltryname);
   const dispatch = useDispatch();
   var num = 3;
   var limit = 39;
 
   useEffect(() => {
-    console.log("line", linearray);
-    console.log("offerarray", offerarray);
+    //console.log("line", linearray);
+    console.log("offerarray", show);
   }, []);
   // useMemo(() => {
 
@@ -46,7 +46,7 @@ export default function Lineselector({
   // }, [])
 
   const handleClick = (e, indx) => {
-    let temp = [...linearray];
+    let temp = [...offerarray];
     let count = 0;
     for (const iterator of temp[lineindex]) {
       if (iterator.isselected) count++;
@@ -55,13 +55,13 @@ export default function Lineselector({
       temp[lineindex][indx].isselected = !temp[lineindex][indx].isselected;
 
       // console.log(temp[lineindex][indx].isselected);
-      dispatch({ type: "setLineArray", payload: temp });
+      dispatch({ type: "setOfferArray", payload: temp });
     } else if (temp[lineindex][indx].isselected) {
       temp[lineindex][indx].isselected = !temp[lineindex][indx].isselected;
 
       // console.log(temp[lineindex][indx].isselected);
 
-      dispatch({ type: "setLineArray", payload: temp });
+      dispatch({ type: "setOfferArray", payload: temp });
     }
     // console.log(indx);
     // console.log(temp[lineindex][indx].isselected);
@@ -87,7 +87,7 @@ export default function Lineselector({
   };
 
   const shuffle = () => {
-    let temp = [...linearray];
+    let temp = [...offerarray];
     const randomarray = [];
     let ta = [];
     let r;
@@ -114,7 +114,7 @@ export default function Lineselector({
       }
     }
 
-    dispatch({ type: "setLineArray", payload: temp });
+    dispatch({ type: "setOfferArray", payload: temp });
 
     // let ta = [];
     // let test = [...final];
@@ -151,25 +151,21 @@ export default function Lineselector({
     // setTemparr(tempa);
   };
   const handlerefresh = () => {
-    const tempsel = [...linearray];
+    const tempsel = [...offerarray];
     console.log("tempsel", tempsel);
     for (const eleent of tempsel[lineindex]) {
       eleent.isselected = false;
     }
-    dispatch({ type: "setLineArray", payload: tempsel });
+    dispatch({ type: "setOfferArray", payload: tempsel });
   };
-  return (
+  return (show ?(
     <div className="Lineselector">
-      <Plusbutton
-        show={show}
-        setShow={setShow}
-        showchk={showchk}
-        setShowchk={setShowchk}
-      />
-      <div className="Header">{label1}</div>
+     
+      <div className="Header">{label1}</div> 
       <div className="Middle">
         <>
-          {linearray[lineindex].map((itm, indx) => {
+          {" "}
+          {offerarray[lineindex].map((itm, indx) => {
             return (
               <>
                 <button
@@ -188,7 +184,7 @@ export default function Lineselector({
             );
           })}
         </>
-      </div> 
+      </div>
       <div className="Footer">
         <button>
           {" "}
@@ -201,6 +197,6 @@ export default function Lineselector({
         </button>
       </div>
          
-    </div>
+    </div>):""
   );
 }

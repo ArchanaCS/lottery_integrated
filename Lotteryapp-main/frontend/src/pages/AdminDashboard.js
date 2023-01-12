@@ -1,7 +1,7 @@
 import "./AdminDashboard.css";
 import HeaderUser from "../components/HeaderUser";
 import Filterbar from "../components/Filterbar";
-
+import Uservalidationfetch_Admin from "../components/Uservalidationfetch_Admin"
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -18,6 +18,7 @@ import Unitpending from "../components/List";
 import { BsCloudMoonFill } from "react-icons/bs";
 import { GiConsoleController } from "react-icons/gi";
 import Totalwinningvalidation from "../components/Totalwinningvalidation";
+import Uservalidationfetch from "../components/Uservalidationfetch_Admin";
 function Dashboard() {
   const navigate = useNavigate();
 
@@ -168,7 +169,9 @@ function Dashboard() {
       </div>
       
       <div className="AdminDashboard_row">
-      <Totalwinningvalidation/>
+        <div className="AdminDashboard_row_col1"><Totalwinningvalidation/></div>
+        <div className="AdminDashboard_row_col2"><Uservalidationfetch_Admin/></div>
+      
         {/* <Winners value1={winner} /> */}
       </div>
 
